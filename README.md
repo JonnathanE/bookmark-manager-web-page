@@ -1,6 +1,56 @@
-# Getting Started with Create React App
+# Bookmark Manager Web Page
+The next project is the design of a web pagey
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Authors
+
+- [Jonnathan Espinoza](https://github.com/JonnathanE)
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://jede-portfolio.web.app/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jonnathan-espinoza-604a41226)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/JonnathanE1)
+
+
+## Tech Stack
+
+**Client:** React, Tailwind v3.0
+
+**Language:** JavaScript, Nodejs v14.18.0
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/JonnathanE/bookmark-manager-web-page.git
+```
+
+Go to the project directory
+
+```bash
+  cd bookmark-manager-web-page
+```
+
+Install dependencies
+
+```bash
+  yarn add
+```
+
+Start the server
+
+```bash
+  yarn start
+```
+
+## Screenshots
+
+![App Screenshot](src/images/capture-web.png)
+
+![App Screenshot](src/images/capture-mobile.png)
+
+![App Screenshot](src/images/capture-web-in-mobile.png)
 
 ## Available Scripts
 
