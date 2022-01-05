@@ -1,3 +1,4 @@
+import ContactSection from "./containers/ContactSection";
 import DownloadSection from "./containers/DownloadSection";
 import FeatureSection from "./containers/FeatureSection";
 import QuestionSection from "./containers/QuestionSection";
@@ -10,6 +11,7 @@ function App() {
       <FeatureSection />
       <DownloadSection />
       <QuestionSection />
+      <ContactSection />
     </div>
   );
 }
