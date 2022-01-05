@@ -1,3 +1,4 @@
+import DownloadSection from "./containers/DownloadSection";
 import FeatureSection from "./containers/FeatureSection";
 import { TopSection } from "./containers/TopSection";
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <TopSection />
       <FeatureSection />
+      <DownloadSection />
     </div>
   );
 }
