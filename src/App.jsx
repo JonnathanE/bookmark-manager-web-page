@@ -1,6 +1,7 @@
 import ContactSection from "./containers/ContactSection";
 import DownloadSection from "./containers/DownloadSection";
 import FeatureSection from "./containers/FeatureSection";
+import FooterSection from "./containers/FooterSection";
 import QuestionSection from "./containers/QuestionSection";
 import { TopSection } from "./containers/TopSection";
 
@@ -12,6 +13,7 @@ function App() {
       <DownloadSection />
       <QuestionSection />
       <ContactSection />
+      <FooterSection />
     </div>
   );
 }
