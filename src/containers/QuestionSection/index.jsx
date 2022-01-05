@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import tw from 'twin.macro'
-import { FaChevronDown } from "react-icons/fa"
+import { FaChevronDown, FaChevronUp } from "react-icons/fa"
+import { questionData } from '../../data'
 
 const QuestionSectionContainer = tw.section`
     bg-bookmark-white 
@@ -44,13 +45,40 @@ const Item = tw.div`
     items-center 
     border-b 
     py-4
+    cursor-pointer
 `;
 
-const ItemTitle = tw.span`
+const Question = tw.span`
     flex-1
 `;
 
+const Dropdown = tw.div`
+    mb-3
+    border-b
+    border-l
+    border-r
+    transition
+    ease-in-out 
+    duration-1000
+`;
+
+const Answer = tw.p`
+    text-bookmark-purple
+    p-3
+`;
+
 const QuestionSection = () => {
+
+    const [clicked, setClicked] = useState(false);
+
+    const toggle = index => {
+        if (clicked === index) {
+            //if clicked question is already active, then close it
+            return setClicked(null);
+        }
+        setClicked(index);
+    }
+
     return (
         <QuestionSectionContainer>
             <Wrapper>
@@ -59,22 +87,28 @@ const QuestionSection = () => {
                     <Desc>Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.</Desc>
                 </Header>
                 <Items>
-                    <Item>
-                        <ItemTitle>What is a Bookmark?</ItemTitle>
-                        <FaChevronDown className='text-bookmark-purple'/>
-                    </Item>
-                    <Item>
-                        <ItemTitle>How can I request a new browser?</ItemTitle>
-                        <FaChevronDown className='text-bookmark-purple'/>
-                    </Item>
-                    <Item>
-                        <ItemTitle>Is there a mobile app?</ItemTitle>
-                        <FaChevronDown className='text-bookmark-purple'/>
-                    </Item>
-                    <Item>
-                        <ItemTitle>What about other Chromium browsers?</ItemTitle>
-                        <FaChevronDown className='text-bookmark-purple'/>
-                    </Item>
+                    {questionData.map((item, index) => (
+                        <>
+                            <Item onClick={() => toggle(index)} key={index}>
+                                <Question>{item.question}</Question>
+                                {clicked === index ?
+                                    <FaChevronUp className='text-bookmark-purple' />
+                                    : <FaChevronDown className='text-bookmark-purple' />
+                                }
+                            </Item>
+                            {clicked === index ?
+                                (
+                                    <Dropdown>
+                                        <Answer>{item.answer}</Answer>
+                                    </Dropdown>
+                                )
+                                : null
+                            }
+                        </>
+                    ))}
+                    <button type="button" class="mt-12 flex self-center btn btn-purple hover:bg-bookmark-white hover:text-black">
+                        More Info
+                    </button>
                 </Items>
             </Wrapper>
         </QuestionSectionContainer>
